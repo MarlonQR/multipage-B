@@ -1,8 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Bienvenidos a mi pagina">
-	fdfgadsgf
+	<div class="my-custom-class">
+		fdfgadsgf
+	</div>
+	<span class="font-myfont  ">Hola mundo con mi fuente elegida</span>
+	<Icon name="mdi:progress-upload" size="56" class='text-rose-600'/>
+	<Icon name="basil:whatsapp-outline"  size="56" class='hover:text-white hover:bg-gradient-to-r from-emerald-400 to-green-600 rounded-full p-1'/>
 </Layout>
+
+<style>
+	.my-custom-class{
+		@apply bg-gradient-to-r from-orange-400 to-rose-600  text-white text-2xl
+	}
+</style>
 
