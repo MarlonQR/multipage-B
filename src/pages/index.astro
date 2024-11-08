@@ -9,12 +9,59 @@ import { Icon } from 'astro-icon/components';
 	</div>
 	<span class="font-myfont  ">Hola mundo con mi fuente elegida</span>
 	<Icon name="mdi:progress-upload" size="56" class='text-rose-600'/>
+	
 	<Icon name="basil:whatsapp-outline"  size="56" class='hover:text-white hover:bg-gradient-to-r from-emerald-400 to-green-600 rounded-full p-1'/>
+
+	<div id="btn" data-role="Admin" class="bg-red-600 text-white">
+		pinchar
+	</div>
+
+	<div class="embla">
+  <div class="embla__container">
+    <div class="embla__slide">Slide 1</div>
+    <div class="embla__slide">Slide 2</div>
+    <div class="embla__slide">Slide 3</div>
+  </div>
+</div>
 </Layout>
 
 <style>
 	.my-custom-class{
 		@apply bg-gradient-to-r from-orange-400 to-rose-600  text-white text-2xl
 	}
+	.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  max-width: 200px;
+  gap: 40px;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  background-color: yellowgreen;
+}
 </style>
+
+<script>
+	import EmblaCarousel from 'embla-carousel'
+
+const emblaNode = document.querySelector('.embla')
+const options = { loop: false }
+const emblaApi = EmblaCarousel(emblaNode, options)
+
+console.log(emblaApi.slideNodes()) // Access API
+	import JSConfetti from "js-confetti"
+	const btn = document.getElementById("btn")
+
+	btn.addEventListener("click", (e)=>{
+		console.log("ayyy", e.target.dataset.role)
+		jsConfetti.addConfetti()
+	})
+
+	const jsConfetti = new JSConfetti()
+
+	console.log(btn)
+</script>
 
